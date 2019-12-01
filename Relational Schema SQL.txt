@@ -1,0 +1,187 @@
+CREATE TABLE public.customer
+(
+    firstname character varying COLLATE pg_catalog."default",
+    lastname character varying COLLATE pg_catalog."default",
+    phonenumber character varying COLLATE pg_catalog."default",
+    emailaddress character varying COLLATE pg_catalog."default" NOT NULL,
+    address character varying COLLATE pg_catalog."default",
+    city character varying COLLATE pg_catalog."default",
+    state character varying COLLATE pg_catalog."default",
+    zipcode character varying COLLATE pg_catalog."default",
+    CONSTRAINT customer_pkey PRIMARY KEY (emailaddress)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.customer
+    OWNER to postgres;
+
+
+CREATE TABLE public.orders
+(
+    doi character varying COLLATE pg_catalog."default",
+    status character varying COLLATE pg_catalog."default",
+    creditcard character varying COLLATE pg_catalog."default" NOT NULL,
+    productid character varying COLLATE pg_catalog."default" NOT NULL,
+    quantity character varying COLLATE pg_catalog."default",
+    price double precision,
+    CONSTRAINT order_pkey PRIMARY KEY (creditcard)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.orders
+    OWNER to postgres;
+
+
+CREATE TABLE public.pricing
+(
+    productid character varying COLLATE pg_catalog."default",
+    state character varying COLLATE pg_catalog."default",
+    percent double precision,
+    totalprice double precision,
+    CONSTRAINT pid FOREIGN KEY (productid)
+        REFERENCES public.product (productid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.pricing
+    OWNER to postgres;
+
+CREATE TABLE public.product
+(
+    category character varying COLLATE pg_catalog."default" NOT NULL,
+    size character varying COLLATE pg_catalog."default",
+    productid character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    expirydate character varying COLLATE pg_catalog."default",
+    price character varying COLLATE pg_catalog."default",
+    "Quantity" character varying COLLATE pg_catalog."default",
+    CONSTRAINT product_pkey PRIMARY KEY (productid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.product
+    OWNER to postgres;
+
+CREATE TABLE public.staff
+(
+    name character varying COLLATE pg_catalog."default",
+    address character varying COLLATE pg_catalog."default",
+    salary character varying COLLATE pg_catalog."default",
+    jobtitle character varying COLLATE pg_catalog."default",
+    staffid character varying COLLATE pg_catalog."default" NOT NULL,
+    username character varying COLLATE pg_catalog."default",
+    CONSTRAINT staff_pkey PRIMARY KEY (staffid),
+    CONSTRAINT username FOREIGN KEY (username)
+        REFERENCES public.userinterface (username) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.staff
+    OWNER to postgres;
+
+CREATE TABLE public.stock
+(
+    productid character varying COLLATE pg_catalog."default",
+    quantity character varying COLLATE pg_catalog."default",
+    warehouseid character varying COLLATE pg_catalog."default",
+    CONSTRAINT pid FOREIGN KEY (productid)
+        REFERENCES public.product (productid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT wid FOREIGN KEY (warehouseid)
+        REFERENCES public.warehouse (warehouseid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.stock
+    OWNER to postgres;
+
+-- Index: fki_pid
+
+-- DROP INDEX public.fki_pid;
+
+CREATE INDEX fki_pid
+    ON public.stock USING btree
+    (productid COLLATE pg_catalog."default")
+    TABLESPACE pg_default;
+
+-- Index: fki_wid
+
+-- DROP INDEX public.fki_wid;
+
+CREATE INDEX fki_wid
+    ON public.stock USING btree
+    (warehouseid COLLATE pg_catalog."default")
+    TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE public.userinterface
+(
+    username character varying COLLATE pg_catalog."default" NOT NULL,
+    password character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT userinterface_pkey PRIMARY KEY (username)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.userinterface
+    OWNER to postgres;
+
+CREATE TABLE public.warehouse
+(
+    name character varying COLLATE pg_catalog."default",
+    address character varying COLLATE pg_catalog."default",
+    capacity character varying COLLATE pg_catalog."default",
+    productid character varying COLLATE pg_catalog."default",
+    contactinfo character varying COLLATE pg_catalog."default",
+    warehouseid character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT warehouse_pkey PRIMARY KEY (warehouseid),
+    CONSTRAINT productid FOREIGN KEY (productid)
+        REFERENCES public.product (productid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.warehouse
+    OWNER to postgres;
+
+-- Index: fki_productid
+
+-- DROP INDEX public.fki_productid;
+
+CREATE INDEX fki_productid
+    ON public.warehouse USING btree
+    (productid COLLATE pg_catalog."default")
+    TABLESPACE pg_default;

@@ -1,0 +1,42 @@
+insert into product values ('fruit','23.4','A123','apple','12/3/2023','34','4');
+
+
+insert into customer values('Adam','Wabash','3125327865','awabash@hawk.iit.edu','3241 S Wabash Ave','Chicago','IL','60616');
+insert into customer values ('Adam','Wabash','3125327865','awabash2@hawk.iit.edu','3241 S Wabash Ave','Chicago','IL','60616');
+insert into customer values ('Kit','Haarrington','456843908','kharrington@hawk.iit.edu','3201 S Michigan Ave','Boolingbrook','TX','60645');
+insert into customer values ('Angelina','Jolie','678543211','ajolie@hawk.iit.edu','3564 N State St','Rochester','NY','708543');
+
+
+insert into orders values ('04/21/2019','Delivered','1134789076543216','1298','1','56.78');
+insert into orders values ('03/13/2019','Not Delivered','8907564367894321','1432','5','100.00');
+insert into orders  values ('01/12/2019','Delivered','8392945678654321','0987','12','24.54');
+
+
+insert into pricing values('1298','IL','10','34.50');
+insert into pricing values('1432','TX','15','43.78');
+insert into pricing values('0987','NY','23','78.00');
+
+
+insert into product values ('Cleaning','Large','0001','05/30/2019','$123.00','8');
+insert into product values ('Food','Large','0056','12/30/2019','$178.43','45');
+insert into product values ('Housing','Small','0895','04/22/2019','$19.39','32');
+
+
+insert into staff values('Kate Henshaw','3564 N State St','$94908','Senior Manager','S3456','khenshaw');
+insert into staff values('Robert Miller','7865 S Michigan Ave','$87434','Branch Manager','S8765','rmiller');
+insert into staff values('Silvia Prague','56 N Obama Ave','$8434','Sales Clerk','S7854','sprague');
+
+
+insert into stock values('4567','54','0003');
+insert into stock values('7865','65','0004');
+insert into stock values('8905','23','0007');
+
+
+insert into userinterface values('sprague','liverpool3');
+insert into userinterface values('rmiller','ballet65');
+insert into userinterface values('hjenkines','waterisgood0');
+
+
+insert into customer values ('Mile 12 Warehouse' ,'3241 S Wabash Ave','500000','0056','warehouse@gmail.com','908473');
+insert into customer values ('Brighton Warehouse' ,'3201 S Michigan Ave','130000','0786','warehouse11@gmail.com','789643');
+insert into customer values ('Spurs Warehouse' ,'4444 S Columbiana Ave','5000','0987','warehouse90@gmail.com','984736');
