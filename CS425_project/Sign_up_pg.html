@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> CS425 </title>
+  </head>
+  <body>
+    <header id = "pageHeader">
+  		<h1> <b> Grocos </b> </h1>
+  	</header>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+		<nav id = "mainNav">
+  <li><a href="HomePage.html"> Home </a></li>
+  <li><a href="Sign_up_pg.html"> login </a></li>
+  <div class="subnav">
+    <div class="subnavbtn">Shop <i class="pulldown"></i></div>
+    <div class="subnav-content">
+      <li><a href="poultry.html"> Poultry</a></li>
+      <li><a href="fruits.html"> Fruits </a></li>
+      <li><a href="vegetables.html"> Vegetables </a></li>
+      <li><a href="consumables.html"> Snacks </a></li>
+    </div>
+</div>
+</div>
+</nav>
+        <article id = "mainArticle">
+	<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+			<a class="hiddenanchor" id="toregister"></a>
+			<a class="hiddenanchor" id="tologin"></a>
+			<div id="wrapper">
+				<div id="login" class="signin_form animate form">						<form autocomplete="on"> 
+						<h1>Log in</h1> 
+						<p> 
+							<label for="username" class="uname" data-icon="u" > Your email or username </label>
+								<input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+							</p>
+							<p> 
+								<label for="password" class="youpasswd" data-icon="p"> Your password </label>
+								<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+							</p>
+							<p class="keeplogin"> 
+								<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+								<label for="loginkeeping">Keep me logged in</label>
+							</p>
+							<p class="login button"> 
+								<input type="submit" value="Login" id="submit" onclick="validate()" /> 
+							</p>
+							<p class="change_link">
+								Not a member yet ?
+								<a href="#toregister" class="to_register">Join us</a>
+							</p>
+						</form>
+					</div>
+
+					<div id="register" class="signup_form animate form">
+						<form  autocomplete="on"> 
+							<h1> Sign up </h1> 
+							<p> 
+								<label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+								<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+							</p>
+							<p> 
+								<label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+								<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@gmail.com"/> 
+							</p>
+							<p> 
+								<label for="FirstName" class="yourFN">Your first name </label>
+								<input id="FirstName" name="yourFN" required="required" type="text" placeholder="eg. John"/>
+							</p>
+
+							<p> 
+								<label for="LastName" class="yourLN">Your last name </label>
+								<input id="LastName" name="yourLN" required="required" type="text" placeholder="eg. Doe"/>
+							</p>
+
+
+							<p> 
+								<label for="PhoneNum" class="yourPhNum">Your phone number </label>
+								<input id="PhoneNum" name="yourPhNum"  required="required" type="tel" pattern="[0-9]{10}" placeholder="eg. 2244249362"/>
+							</p>
+
+							<p> 
+								<label for="Address" class="yourAd">Your Address </label>
+								<input id="Address" name="yourAd"  required="required" type="text" placeholder="eg. 3241 S Wabash Ave"/>
+							</p>
+
+							<p> 
+								<label for="City" class="yourCity">Your city </label>
+								<input id="City" name="yourCity"  required="required" type="text" placeholder="eg. Chicago"/>
+							</p>
+
+
+							<p> 
+								<label for="State" class="yourState">Your State </label>
+								<input id="State" name="yourState" required="required" type="tel" placeholder="eg. Illinois"/>
+							</p>
+
+
+							<p> 
+								<label for="ZipCode" class="yourZipCode">Your ZipCode </label>
+								<input id="ZipCode" name="yourZipCode"  required="required" type="tel" pattern="[0-9]{5}" placeholder="eg. 60616"/>
+							</p>
+
+							<p> 
+								<label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+								<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+							</p>
+
+
+							<p> 
+								<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+								<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+							</p>
+							<p class="signin button"> 
+								<input type="submit" value="Sign up"/> 
+							</p>
+							<p class="change_link">  
+								Already a member ?
+								<a href="#tologin" class="to_login"> Go and log in </a>
+							</p>
+						</form>
+					</div>	
+				</div>
+	</article>
+	<footer id ="pageFooter">
+        <p><em> Contact info: </em> <strong>+12244249362</strong> </p>
+        <p> email us at: <a href="mailto:cgeorge3@hawk.iit.edu"> cgeorge3@hawk.iit.edu </a></p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="FormTrans.js"></script>
+	<script type="text/javascript" src="LogValid.js"></script>
+  </body>
+</html>

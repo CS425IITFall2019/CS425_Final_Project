@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> CS425 </title>
+  </head>
+
+  <body>
+    <header id="pageHeader">
+      <h1> <b> Grocos </b> </h1>
+    </header>
+    <nav id="mainNav">
+      <div class="navbar">
+        <li><a href="HomePage.html"> Home </a></li>
+        <li><a href="Sign_up_pg.html"> login </a></li>
+        <div class="subnav">
+          <div class="subnavbtn">Shop <i class="pulldown"></i></div>
+          <div class="subnav-content">
+            <li><a href="poultry.html"> Poultry</a></li>
+            <li><a href="fruits.html"> Fruits </a></li>
+            <li><a href="vegetables.html"> Vegetables </a></li>
+            <li><a href="consumables.html"> Snacks </a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <article>
+      <div class="search-container">
+          <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form></div>
+      <section class="container content-section">
+        <h2 class="section-header">Vegetables (per kg)</h2>
+        <div class="shop-items">
+          <div class="shop-item">
+            <span class="shop-item-title">Carrots</span>
+            <img class="shop-item-image" src="media/Carrots.jpg">
+            <div class="shop-item-details">
+              <span class="shop-item-price">$20.00</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+          </div>
+          <div class="shop-item">
+            <span class="shop-item-title">Potatoes</span>
+            <img class="shop-item-image" src="media/Potatoes.jpg">
+            <div class="shop-item-details">
+              <span class="shop-item-price">$10.00</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+          </div>
+          <div class="shop-item">
+            <span class="shop-item-title">Broccolies</span>
+            <img class="shop-item-image" src="media/Broccoli.jpg">
+            <div class="shop-item-details">
+              <span class="shop-item-price">$15.50</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+          </div>
+          <div class="shop-item">
+            <span class="shop-item-title">Cucumbers</span>
+            <img class="shop-item-image" src="media/Cucumbers.jpg">
+            <div class="shop-item-details">
+              <span class="shop-item-price">$15.00</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+          </div>        
+      </section>
+
+      <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+      </section>
+    </article>
+    <footer id="pageFooter">
+      <p><em> Contact info: </em> <strong>+12244249362</strong> </p>
+      <p> email us at: <a href="mailto:cgeorge3@hawk.iit.edu"> cgeorge3@hawk.iit.edu </a></p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/shop.js"></script>
+  </body>
+
+</html>

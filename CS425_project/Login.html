@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> CS425 </title>
+  </head>
+  <body>
+    <header id = "pageHeader">
+  		<h1> <b> Grocos </b> </h1>
+  	</header>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="javascript/FormTrans.js"></script>
+		<nav id = "mainNav">
+          <ul>
+            <li><a href="HomePage.html"> Home </a></li>
+            <li><a href="shop.html"> Shop </a></li>
+            <li><a href="Sign_up_pg.html"> login </a></li>
+          </ul>
+        </nav>
+        <article id = "mainArticle">
+	<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+			<a class="hiddenanchor" id="toregister"></a>
+			<a class="hiddenanchor" id="tologin"></a>
+			<div id="wrapper">
+				<div id="login" class="animate form">						<form  action="mysuperscript.php" autocomplete="on"> 
+						<h1>Log in</h1> 
+						<p> 
+							<label for="username" class="uname" data-icon="u" > Your email or username </label>
+								<input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+							</p>
+							<p> 
+								<label for="password" class="youpasswd" data-icon="p"> Your password </label>
+								<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+							</p>
+							<p class="keeplogin"> 
+								<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+								<label for="loginkeeping">Keep me logged in</label>
+							</p>
+							<p class="login button"> 
+								<input type="submit" value="Login" /> 
+							</p>
+							<p class="change_link">
+								Not a member yet ?
+								<a href="#toregister" class="to_register">Join us</a>
+							</p>
+						</form>
+					</div>
+
+					
+<!--
+  		<h2 id="Sign-Up-Form"> Sign Up Form </h2>
+			<form method="post" autocomplete="on">
+			<fieldset>
+			  <legend> Your Info </legend>
+				<p><label> First Name: <input  maxlength="30" type = "text" name = "first_name_field" placeholder = "Your First Name"></label></p>
+				<p><label> Last Name: <input  maxlength="30" type = "text" name = "last_name_field" placeholder = "Your Last Name"></label></p>
+				<p><label> Phone Number: <input  maxlength="15" type = "number" name = "phone_field" placeholder = "Your Phone Number"></label></p>
+				<p><label> Email Address: <input  maxlength="30" type = "text" name = "email_field" placeholder = "Your Email Address"></label></p>
+				<p><label> Address: <input  maxlength="150" type = "text" name = "address" placeholder = "Your Address"></label></p>
+				<p><label> City: <input  maxlength="30" type = "text" name = "City" placeholder = "Residing City"></label></p>
+				<p><label> State: <input  maxlength="30" type = "text" name = "State" placeholder = "Residing state"></label></p>
+				<p><label> Zip Code: <input  maxlength="5" type = "number" name = "Zip_code" placeholder = "Zip Code"></label></p>
+			</fieldset>
+				<input type = "submit" value  = "Continue">
+		</form>-->
+	</article>
+	<footer id ="pageFooter">
+        <p><em> Contact info: </em> <strong>+12244249362</strong> </p>
+        <p> email us at: <a href="mailto:cgeorge3@hawk.iit.edu"> cgeorge3@hawk.iit.edu </a></p>
+    </footer>
+  </body>
+</html>
